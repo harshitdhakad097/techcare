@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechCare Solutions - Fast, Reliable Software Repair & Support Services">
+    <title>TechCare Solutions - Computer Repair & Technical Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-medical"></i>
+                <span>TechCare Solutions</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Fast, Reliable Software Repair & Support</h1>
+            <p>Expert computer care, repair, and technical support at your fingertips</p>
+            <div class="hero-buttons">
+                <a href="tel:+919876543210" class="btn btn-primary">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="https://wa.me/919876543210?text=Hi%20TechCare%20Solutions%20I%20need%20technical%20support" class="btn btn-secondary">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Now
+                </a>
+                <a href="#booking" class="btn btn-tertiary">
+                    <i class="fas fa-wrench"></i> Get Help Now
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-box">
+                <i class="fas fa-shield-alt"></i>
+                <span>Virus Protection</span>
+            </div>
+            <div class="floating-box">
+                <i class="fas fa-bolt"></i>
+                <span>Speed Boost</span>
+            </div>
+            <div class="floating-box">
+                <i class="fas fa-hdd"></i>
+                <span>Data Recovery</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats
+    <section class="stats">
+        <div class="stat-card">
+            <h3>500+</h3>
+            <p>Happy Customers</p>
+        </div>
+        <div class="stat-card">
+            <h3>10+</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat-card">
+            <h3>1000+</h3>
+            <p>Issues Fixed</p>
+        </div>
+        <div class="stat-card">
+            <h3>98%</h3>
+            <p>Success Rate</p>
+        </div>
+    </section> -->
+
+    <!-- Services Preview -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive solutions for all your tech needs</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-virus"></i>
+                </div>
+                <h3>Virus & Malware Removal</h3>
+                <p>Complete protection from viruses, malware, and ransomware threats</p>
+                <ul>
+                    <li>Deep system scan</li>
+                    <li>Real-time protection</li>
+                    <li>Safe removal</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <h3>Software Installation & Updates</h3>
+                <p>Professional software setup and system updates</p>
+                <ul>
+                    <li>Application setup</li>
+                    <li>Driver updates</li>
+                    <li>OS patches</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>System Optimization</h3>
+                <p>Boost your PC speed and performance dramatically</p>
+                <ul>
+                    <li>Startup optimization</li>
+                    <li>Disk cleanup</li>
+                    <li>Memory optimization</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-hdd"></i>
+                </div>
+                <h3>OS Installation</h3>
+                <p>Windows and Linux installation and configuration</p>
+                <ul>
+                    <li>Windows installation</li>
+                    <li>Linux setup</li>
+                    <li>Multi-boot config</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>Data Backup & Recovery</h3>
+                <p>Secure data backup and professional recovery services</p>
+                <ul>
+                    <li>Cloud backup</li>
+                    <li>Data recovery</li>
+                    <li>File restoration</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Remote Support Services</h3>
+                <p>Live technical support and remote assistance anytime</p>
+                <ul>
+                    <li>24/7 support</li>
+                    <li>Remote access</li>
+                    <li>Quick resolution</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="services.html" class="btn btn-primary">View All Services</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="section-header">
+            <h2>Why Choose TechCare Solutions?</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h4>Fast Service</h4>
+                <p>Quick turnaround time with same-day repairs available</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h4>Expert Team</h4>
+                <p>Certified professionals with years of experience</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>100% Safe</h4>
+                <p>Secure data handling and warranty on all services</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h4>24/7 Support</h4>
+                <p>Round-the-clock customer support for your peace of mind</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <h4>Affordable Pricing</h4>
+                <p>Competitive rates with transparent billing</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>Top Rated</h4>
+                <p>Trusted by hundreds of satisfied customers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <h2>Our Plans</h2>
+            <p>Affordable pricing for every need</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="plan-badge">Popular</div>
+                <h3>Basic</h3>
+                <p class="price">₹499</p>
+                <p class="price-desc">One-time service</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Single issue diagnosis</li>
+                    <li><i class="fas fa-check"></i> Basic troubleshooting</li>
+                    <li><i class="fas fa-check"></i> 1-hour service</li>
+                    <li><i class="fas fa-times"></i> No follow-up support</li>
+                </ul>
+                <a href="#booking" class="btn btn-secondary">Book Now</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="plan-badge premium">Most Popular</div>
+                <h3>Standard</h3>
+                <p class="price">₹999</p>
+                <p class="price-desc">Per repair session</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Full system diagnosis</li>
+                    <li><i class="fas fa-check"></i> Complete troubleshooting</li>
+                    <li><i class="fas fa-check"></i> 3-hour service</li>
+                    <li><i class="fas fa-check"></i> 7-day follow-up</li>
+                </ul>
+                <a href="#booking" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="pricing-card">
+                <div class="plan-badge">Best Value</div>
+                <h3>Premium</h3>
+                <p class="price">₹2999</p>
+                <p class="price-desc">Monthly support</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Unlimited issues</li>
+                    <li><i class="fas fa-check"></i> 24/7 priority support</li>
+                    <li><i class="fas fa-check"></i> Remote assistance</li>
+                    <li><i class="fas fa-check"></i> Regular optimization</li>
+                </ul>
+                <a href="#booking" class="btn btn-secondary">Book Now</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How long does a typical repair take?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Most repairs take 1-3 hours depending on the issue. Complex problems may take longer, and we'll provide an estimate upfront.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do you offer remote support?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer 24/7 remote support for most issues. We'll guide you through fixing your problem or take control to resolve it faster.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Is my data safe with you?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We follow strict data privacy protocols and never access personal files unless necessary. All work is backed by a service warranty.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What areas do you serve?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We provide remote support nationwide and on-site support in metro areas. Contact us to check if we serve your location.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Can you fix other devices besides PC?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We specialize in PC and laptop support. For other devices, feel free to contact us - we may be able to help!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do you provide follow-up support?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Our Standard and Premium plans include follow-up support. We'll make sure the issue is completely resolved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"TechCare Solutions fixed my PC's virus issue in just 2 hours! Excellent service and very professional team."</p>
+                <div class="customer-info">
+                    <div class="avatar">R</div>
+                    <div>
+                        <h4>Rajesh Kumar</h4>
+                        <p>Delhi, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"My laptop was running so slow, but after their optimization service it's like new! Highly recommended!"</p>
+                <div class="customer-info">
+                    <div class="avatar">P</div>
+                    <div>
+                        <h4>Priya Singh</h4>
+                        <p>Mumbai, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Great remote support! They helped me fix my system without even touching my PC. Very trustworthy."</p>
+                <div class="customer-info">
+                    <div class="avatar">A</div>
+                    <div>
+                        <h4>Amit Patel</h4>
+                        <p>Bangalore, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="section-header">
+            <h2>Book Your Service</h2>
+            <p>Quick and easy booking process</p>
+        </div>
+        <form class="booking-form" id="bookingForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="issue">Describe Your Issue</label>
+                <textarea id="issue" name="issue" rows="4" placeholder="Tell us what problem you're facing..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="service">Service Type</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="virus">Virus & Malware Removal</option>
+                    <option value="software">Software Installation & Updates</option>
+                    <option value="optimization">System Optimization</option>
+                    <option value="os">OS Installation</option>
+                    <option value="data">Data Backup & Recovery</option>
+                    <option value="remote">Remote Support</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="preferred-time">Preferred Service Time</label>
+                <input type="datetime-local" id="preferred-time" name="preferred-time" required>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-calendar-check"></i> Book Service
+            </button>
+        </form>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog-preview">
+        <div class="section-header">
+            <h2>Tech Tips & Updates</h2>
+            <p>Stay informed with our latest articles</p>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                </div>
+                <h3>How to Speed Up Your PC</h3>
+                <p class="blog-Meta">Apr 10, 2026</p>
+                <p>Learn proven techniques to boost your computer's speed and performance without spending money on new hardware.</p>
+                <a href="blog.html#speed-up-pc" class="read-more">Read More →</a>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+                <h3>Common Software Problems & Fixes</h3>
+                <p class="blog-meta">Apr 8, 2026</p>
+                <p>Discover solutions to the most common software issues that plague computer users and how to fix them easily.</p>
+                <a href="blog.html#common-problems" class="read-more">Read More →</a>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-virus"></i>
+                    </div>
+                </div>
+                <h3>Protecting Your PC from Malware</h3>
+                <p class="blog-meta">Apr 5, 2026</p>
+                <p>Essential security practices and tools to keep your computer safe from malware, viruses, and cyber threats.</p>
+                <a href="blog.html#malware-protection" class="read-more">Read More →</a>
+            </article>
+        </div>
+        <div class="text-center">
+            <a href="blog.html" class="btn btn-primary">View All Articles</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Need Immediate Help?</h2>
+        <p>Don't let tech issues slow you down. Reach out now for fast support!</p>
+        <div class="cta-buttons">
+            <a href="tel:+919876543210" class="btn btn-primary">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a href="https://wa.me/919876543210?text=Hi%20TechCare%20Solutions%20I%20need%20technical%20support" class="btn btn-secondary">
+                <i class="fab fa-whatsapp"></i> WhatsApp Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TechCare Solutions</h4>
+                <p>Providing fast, reliable computer repair and support services.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 9876 543210</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:support@techcare.com">support@techcare.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+            </div>
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Monday - Sunday</p>
+                <p>9:00 AM - 10:00 PM</p>
+                <p style="color: #00ff88;">24/7 Emergency Support</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechCare Solutions. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Floating Support Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:+919876543210" class="floating-btn call-btn" title="Call Now">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://wa.me/919876543210?text=Hi%20TechCare%20Solutions%20I%20need%20technical%20support" class="floating-btn whatsapp-btn" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="floating-btn emergency-btn" id="emergencyBtn" title="Fix My PC Now">
+            <i class="fas fa-exclamation-circle"></i>
+        </button>
+    </div>
+
+    <!-- Modal for Emergency Support -->
+    <div class="modal" id="emergencyModal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>Quick Support</h2>
+            <p>Get instant help with your tech issues</p>
+            <div class="quick-options">
+                <button class="quick-btn" onclick="quickCall()">
+                    <i class="fas fa-phone"></i><br>Call Now
+                </button>
+                <button class="quick-btn" onclick="quickWhatsApp()">
+                    <i class="fab fa-whatsapp"></i><br>WhatsApp
+                </button>
+                <button class="quick-btn" onclick="quickForm()">
+                    <i class="fas fa-envelope"></i><br>Quick Form
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Form Modal -->
+    <div class="modal" id="quickFormModal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>Quick Support Form</h2>
+            <form id="quickSupportForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Your Phone" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Describe your issue..." rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <span>Chat with us</span>
+            <button class="chat-close">&times;</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p>Hello! 👋 How can we help you today? We're available 24/7!</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message..." id="chatInput">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
