@@ -116,9 +116,9 @@ Find these and replace with YOUR info:
 
 ```
 Phone: +91 9876 543210
-WhatsApp: 919876543210
-Email: support@techcare.com
-Location: New Delhi, India
+WhatsApp: 919238150103
+Email: anuragpatel881555@gmail.com
+Location: Bhopal, India
 ```
 
 ### Step 2: Update Company Info
@@ -308,8 +308,8 @@ Your website is fully mobile-optimized:
 
 ### Issue: Buttons not working
 **Solution**: 
-- Check phone number format: `tel:+919876543210`
-- Check WhatsApp link format: `https://wa.me/919876543210`
+- Check phone number format: `tel:+919238150103`
+- Check WhatsApp link format: `https://wa.me/919238150103`
 
 ### Issue: Dark mode not saving
 **Solution**: 
@@ -359,13 +359,13 @@ Your website is fully mobile-optimized:
 ### Important Contact Info in Code
 ```html
 <!-- Phone -->
-<a href="tel:+919876543210">+919876543210</a>
+<a href="tel:+919238150103">+919238150103</a>
 
 <!-- WhatsApp -->
-<a href="https://wa.me/919876543210?text=Hi%20TechCare%20Solutions%20I%20need%20technical%20support">
+<a href="https://wa.me/919238150103?text=Hi%20TechCare%20Solutions%20I%20need%20technical%20support">
 
 <!-- Email -->
-<a href="mailto:support@techcare.com">
+<a href="mailto:anuragpatel881555@gmail.com">
 ```
 
 ### CSS Variables to Customize

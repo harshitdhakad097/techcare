@@ -116,9 +116,9 @@ Replace the following with actual contact details:
 
 ```
 Phone: +91 9876 543210
-WhatsApp: https://wa.me/919876543210
-Email: support@techcare.com
-Address: New Delhi, India
+WhatsApp: https://wa.me/919238150103
+Email: anuragpatel881555@gmail.com
+Address: Bhopal, India
 Hours: Monday - Sunday, 9:00 AM - 10:00 PM
 ```
 
@@ -130,10 +130,10 @@ Hours: Monday - Sunday, 9:00 AM - 10:00 PM
 
 ### 2. **Update Contact Information**
    Search for and replace:
-   - `+919876543210` → Your phone number
-   - `919876543210` → Your WhatsApp number (without +)
-   - `support@techcare.com` → Your email
-   - `New Delhi, India` → Your location
+   - `+919238150103` → Your phone number
+   - `919238150103` → Your WhatsApp number (without +)
+   - `anuragpatel881555@gmail.com` → Your email
+   - `Bhopal, India` → Your location
 
 ### 3. **Change Colors**
    In `styles.css`, modify the CSS variables in `:root`:
@@ -218,7 +218,7 @@ Hours: Monday - Sunday, 9:00 AM - 10:00 PM
 - Format: International format with country code
 
 ### Email
-- Support: support@techcare.com
+- Support: anuragpatel881555@gmail.com
 - (Replace with actual email)
 
 ### Hours

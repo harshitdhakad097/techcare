@@ -5,10 +5,10 @@
 ### 📌 CRITICAL - Must Update These!
 
 #### 1. Phone Number
-**Current**: +91 9876 543210
+**Current**: +91 9238 150103
 
 Files to update:
-- index.html: Lines with `href="tel:+919876543210"`
+- index.html: Lines with `href="tel:+919238150103"`
 - about.html: Contact section
 - services.html: Contact section
 - contact.html: All contact buttons
@@ -21,7 +21,7 @@ Count: Update in ~15+ locations
 ---
 
 #### 2. WhatsApp Number
-**Current**: 919876543210
+**Current**: 919238150103
 
 Files to update:
 - index.html: WhatsApp button and links
@@ -29,16 +29,16 @@ Files to update:
 - services.html: WhatsApp section
 - contact.html: WhatsApp button
 - blog.html: WhatsApp button
-- script.js: `const WHATSAPP_NUMBER = '919876543210'`
+- script.js: `const WHATSAPP_NUMBER = '919238150103'`
 
 Count: Update in ~10+ locations
 
-**Note**: Remove the +91 prefix for WhatsApp links, just use 919876543210
+**Note**: Remove the +91 prefix for WhatsApp links, just use 919238150103
 
 ---
 
 #### 3. Email Address
-**Current**: support@techcare.com
+**Current**: anuragpatel881555@gmail.com
 
 Files to update:
 - index.html: Footer section
@@ -52,7 +52,7 @@ Count: Update in ~8 locations
 ---
 
 #### 4. Company Address
-**Current**: New Delhi, India
+**Current**: Bhopal, India
 
 Files to update:
 - index.html: Footer section
@@ -413,13 +413,13 @@ Before launching:
 **Search for phone with +**: `+919876543210`
 - Replace with: `+YOUR_COUNTRY_CODE_PHONE`
 
-**Search for email**: `support@techcare.com`
+**Search for email**: `anuragpatel881555@gmail.com`
 - Replace with: `your-email@yourdomain.com`
 
 **Search for company**: `TechCare Solutions`
 - Replace with: `Your Company Name`
 
-**Search for location**: `New Delhi, India`
+**Search for location**: `Bhopal, India`
 - Replace with: `Your City, Country`
 
 ---

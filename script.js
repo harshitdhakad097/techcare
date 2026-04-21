@@ -118,11 +118,11 @@ window.addEventListener('click', (e) => {
 
 // Quick action functions
 function quickCall() {
-    window.location.href = 'tel:+919876543210';
+    window.location.href = 'tel:+919238150103';
 }
 
 function quickWhatsApp() {
-    window.location.href = 'https://wa.me/919876543210?text=Hi%20TechCare%20Solutions%20I%20need%20technical%20support';
+    window.location.href = 'https://wa.me/919238150103?text=Hi%20TechCare%20Solutions%20I%20need%20technical%20support';
 }
 
 function quickForm() {
@@ -413,8 +413,8 @@ window.addEventListener('load', () => {
 // ============= DYNAMIC PHONE NUMBER (FOR TESTING) =============
 
 // In production, store phone numbers in environment variables or config
-const PHONE_NUMBER = '+919876543210';
-const WHATSAPP_NUMBER = '919876543210';
+const PHONE_NUMBER = '+919238150103';
+const WHATSAPP_NUMBER = '919238150103';
 
 // Update all phone links (optional - already set in HTML)
 document.querySelectorAll('a[href^="tel:"]').forEach(link => {
