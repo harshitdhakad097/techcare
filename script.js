@@ -11,23 +11,26 @@ const html = document.documentElement;
 const savedTheme = localStorage.getItem('theme') || 'dark';
 if (savedTheme === 'light') {
     document.body.classList.add('light-mode');
-    updateThemeIcon();
+    if (themeToggle) updateThemeIcon();
 }
 
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    
-    if (document.body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-        updateThemeIcon();
-    } else {
-        localStorage.setItem('theme', 'dark');
-        updateThemeIcon();
-    }
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        
+        if (document.body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            updateThemeIcon();
+        } else {
+            localStorage.setItem('theme', 'dark');
+            updateThemeIcon();
+        }
+    });
+}
 
 function updateThemeIcon() {
-    const icon = themeToggle.querySelector('i');
+    const icon = themeToggle ? themeToggle.querySelector('i') : null;
+    if (!icon) return;
     if (document.body.classList.contains('light-mode')) {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
@@ -42,33 +45,43 @@ function updateThemeIcon() {
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
-menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close menu when a link is clicked
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
+const navMenuLinks = document.querySelectorAll('.nav-menu a');
+if (menuToggle && navMenu) {
+    navMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
     });
-});
+}
 
 // ============= SMOOTH SCROLLING =============
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+if (smoothLinks.length) {
+    smoothLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
-});
+}
 
 // ============= FAQ ACCORDION =============
 
@@ -98,16 +111,22 @@ const quickFormModal = document.getElementById('quickFormModal');
 const chatWidget = document.getElementById('chatWidget');
 const chatToggle = document.getElementById('chatToggle');
 
-emergencyBtn.addEventListener('click', () => {
-    emergencyModal.classList.add('active');
-});
+if (emergencyBtn && emergencyModal) {
+    emergencyBtn.addEventListener('click', () => {
+        emergencyModal.classList.add('active');
+    });
+}
 
 // Close modals when close button is clicked
-document.querySelectorAll('.close-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        btn.closest('.modal').classList.remove('active');
+const closeButtons = document.querySelectorAll('.close-btn');
+if (closeButtons.length) {
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modal = btn.closest('.modal');
+            if (modal) modal.classList.remove('active');
+        });
     });
-});
+}
 
 // Close modal when clicking outside
 window.addEventListener('click', (e) => {
@@ -126,37 +145,46 @@ function quickWhatsApp() {
 }
 
 function quickForm() {
-    document.getElementById('emergencyModal').classList.remove('active');
-    quickFormModal.classList.add('active');
+    if (emergencyModal) emergencyModal.classList.remove('active');
+    if (quickFormModal) quickFormModal.classList.add('active');
 }
 
 // Quick form submission
-document.getElementById('quickSupportForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you! We will contact you shortly.');
-    quickFormModal.classList.remove('active');
-    document.getElementById('quickSupportForm').reset();
-});
+const quickSupportForm = document.getElementById('quickSupportForm');
+if (quickSupportForm) {
+    quickSupportForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you! We will contact you shortly.');
+        if (quickFormModal) quickFormModal.classList.remove('active');
+        quickSupportForm.reset();
+    });
+}
 
 // ============= CHAT WIDGET =============
 
-chatToggle.addEventListener('click', () => {
-    chatWidget.classList.toggle('active');
-    if (chatWidget.classList.contains('active')) {
-        document.getElementById('chatInput').focus();
-    }
-});
+if (chatToggle && chatWidget) {
+    chatToggle.addEventListener('click', () => {
+        chatWidget.classList.toggle('active');
+        const chatInput = document.getElementById('chatInput');
+        if (chatWidget.classList.contains('active') && chatInput) {
+            chatInput.focus();
+        }
+    });
+}
 
 const chatCloseBtn = document.querySelector('.chat-close');
-chatCloseBtn.addEventListener('click', () => {
-    chatWidget.classList.remove('active');
-});
+if (chatCloseBtn && chatWidget) {
+    chatCloseBtn.addEventListener('click', () => {
+        chatWidget.classList.remove('active');
+    });
+}
 
 function sendMessage() {
     const chatInput = document.getElementById('chatInput');
     const chatMessages = document.getElementById('chatMessages');
+    if (!chatInput || !chatMessages) return;
+
     const message = chatInput.value.trim();
-    
     if (message === '') return;
     
     // Add user message
@@ -192,29 +220,32 @@ function sendMessage() {
 }
 
 // Send message on Enter key
-document.getElementById('chatInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        sendMessage();
-    }
-});
+const chatInputElement = document.getElementById('chatInput');
+if (chatInputElement) {
+    chatInputElement.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+}
 
 // ============= BOOKING FORM SUBMISSION =============
 
 const bookingForm = document.getElementById('bookingForm');
-
-bookingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(bookingForm);
-    const data = {
-        name: formData.get('name'),
-        phone: formData.get('phone'),
-        email: formData.get('email'),
-        issue: formData.get('issue'),
-        service: formData.get('service'),
-        preferredTime: formData.get('preferred-time')
-    };
+if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(bookingForm);
+        const data = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            email: formData.get('email'),
+            issue: formData.get('issue'),
+            service: formData.get('service'),
+            preferredTime: formData.get('preferred-time')
+        };
     
     // In a real application, you would send this data to a server
     console.log('Booking Data:', data);
@@ -270,8 +301,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all service cards, pricing cards, etc.
-document.querySelectorAll('.service-card, .pricing-card, .testimonial-card, .blog-card').forEach(el => {
+// Observe all service cards, testimonial cards, etc.
+document.querySelectorAll('.service-card, .testimonial-card, .blog-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'all 0.6s ease';
@@ -449,7 +480,9 @@ document.addEventListener('keydown', (e) => {
         document.querySelectorAll('.modal.active').forEach(modal => {
             modal.classList.remove('active');
         });
-        chatWidget.classList.remove('active');
+        if (chatWidget) {
+            chatWidget.classList.remove('active');
+        }
     }
 });
 
@@ -474,3 +507,259 @@ function scrollToTop() {
 console.log('TechCare Solutions website loaded successfully!');
 console.log('Version: 1.0.0');
 console.log('Developed with ❤️');
+
+/* ==============================
+   ADVANCED SERVICE REVIEWS (FRONT-END ONLY)
+   - Allows users to submit a review (rating + comment + name)
+   - Stores reviews per-page in localStorage under `reviews:<path>`
+   - Shows total reviews, average rating, and previous reviews list
+   - No backend required; data is stored locally in the user's browser
+   ============================== */
+
+function getReviewsKey(section) {
+    return 'reviews:' + (section.dataset.key || location.pathname);
+}
+
+function loadReviews(key) {
+    try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+        console.warn('Failed to parse reviews from localStorage', e);
+        return [];
+    }
+}
+
+function saveReviews(key, reviews) {
+    try {
+        localStorage.setItem(key, JSON.stringify(reviews));
+    } catch (e) {
+        console.warn('Could not save reviews to localStorage', e);
+    }
+}
+
+function submitReviewToDatabase(review, pageKey) {
+    // Placeholder for backend integration.
+    // Replace this with your own API call to store reviews in your database.
+    console.log('Review ready for database submission:', review, 'pageKey:', pageKey);
+    // Example:
+    // return fetch('/api/reviews', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ page: pageKey, ...review })
+    // });
+}
+
+function calcAverage(reviews) {
+    if (!reviews || reviews.length === 0) return 0;
+    const sum = reviews.reduce((s, r) => s + (Number(r.rating) || 0), 0);
+    return Math.round((sum / reviews.length) * 10) / 10; // one decimal
+}
+
+function createStarElements(rating) {
+    const wrapper = document.createElement('span');
+    wrapper.className = 'review-stars';
+    for (let i = 1; i <= 5; i++) {
+        const iEl = document.createElement('i');
+        iEl.className = 'fas fa-star';
+        if (i <= rating) iEl.classList.add('filled');
+        wrapper.appendChild(iEl);
+    }
+    return wrapper;
+}
+
+function renderStats(section, reviews) {
+    let stats = section.querySelector('.rating-stats');
+    if (!stats) {
+        stats = document.createElement('div');
+        stats.className = 'rating-stats';
+        const widget = section.querySelector('.rating-widget');
+        if (widget) {
+            const widgetParent = widget.parentElement;
+            if (widgetParent && widgetParent === section) {
+                section.insertBefore(stats, widget);
+            } else if (widgetParent) {
+                widgetParent.insertBefore(stats, widget);
+            } else {
+                section.appendChild(stats);
+            }
+        } else {
+            section.appendChild(stats);
+        }
+    }
+
+    const avg = calcAverage(reviews);
+    const total = reviews.length;
+    const starsMarkup = createStarElements(Math.round(avg)).outerHTML;
+    stats.innerHTML = `
+        <div class="rating-summary">
+            <strong>${avg}</strong>
+            <span class="rating-average-label">Average service rating</span>
+            <div class="rating-summary-stars">${starsMarkup}</div>
+            <span>${total} review${total !== 1 ? 's' : ''}</span>
+        </div>
+    `;
+}
+
+function renderReviewList(section, reviews) {
+    let heading = section.querySelector('.review-list-title');
+    if (!heading) {
+        heading = document.createElement('div');
+        heading.className = 'review-list-title';
+        heading.textContent = 'Latest service reviews';
+        section.appendChild(heading);
+    }
+
+    let list = section.querySelector('.review-list');
+    if (!list) {
+        list = document.createElement('div');
+        list.className = 'review-list';
+        section.appendChild(list);
+    }
+
+    if (heading.nextElementSibling !== list) {
+        section.insertBefore(list, heading.nextElementSibling);
+    }
+
+    if (!reviews || reviews.length === 0) {
+        list.innerHTML = '<p class="no-reviews">No reviews yet. Be the first to review our service.</p>';
+        return;
+    }
+
+    // most recent first
+    const sorted = reviews.slice().sort((a, b) => (b.time || 0) - (a.time || 0));
+    list.innerHTML = '';
+    sorted.forEach(r => {
+        const item = document.createElement('div');
+        item.className = 'review-item';
+        const header = document.createElement('div');
+        header.className = 'review-header';
+        const name = document.createElement('strong');
+        name.textContent = r.name ? r.name : 'Anonymous';
+        header.appendChild(name);
+        const meta = document.createElement('span');
+        meta.className = 'review-meta';
+        const d = new Date(r.time || Date.now());
+        meta.textContent = ' • ' + d.toLocaleString();
+        header.appendChild(meta);
+
+        const stars = createStarElements(Number(r.rating) || 0);
+        const comment = document.createElement('p');
+        comment.className = 'review-comment';
+        comment.textContent = r.comment || '';
+
+        item.appendChild(header);
+        item.appendChild(stars);
+        if (r.comment) item.appendChild(comment);
+        list.appendChild(item);
+    });
+}
+
+function renderReviewForm(section) {
+    // container where users interact
+    let container = section.querySelector('.rating-widget');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'rating-widget';
+        section.appendChild(container);
+    }
+
+    container.innerHTML = '';
+
+    const form = document.createElement('form');
+    form.className = 'review-form';
+    form.setAttribute('aria-label', 'Submit a service review');
+
+    // star selector
+    const starWrapper = document.createElement('div');
+    starWrapper.className = 'star-selector';
+    let selected = 0;
+    for (let i = 1; i <= 5; i++) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'star';
+        b.dataset.value = i;
+        b.innerText = '★';
+        b.setAttribute('aria-label', i + ' stars');
+        b.addEventListener('click', () => {
+            selected = i;
+            [...starWrapper.querySelectorAll('.star')].forEach(s => {
+                if (Number(s.dataset.value) <= i) s.classList.add('filled'); else s.classList.remove('filled');
+            });
+        });
+        starWrapper.appendChild(b);
+    }
+
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.placeholder = 'Your name (optional)';
+    nameInput.name = 'reviewer';
+
+    const comment = document.createElement('textarea');
+    comment.placeholder = 'Leave a short comment (optional)';
+    comment.name = 'comment';
+    comment.rows = 3;
+
+    const submit = document.createElement('button');
+    submit.type = 'submit';
+    submit.className = 'btn btn-primary';
+    submit.textContent = 'Submit Review';
+
+    const msg = document.createElement('p');
+    msg.className = 'rating-msg';
+
+    form.appendChild(starWrapper);
+    form.appendChild(nameInput);
+    form.appendChild(comment);
+    form.appendChild(submit);
+    form.appendChild(msg);
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (selected <= 0) {
+            msg.textContent = 'Please select a rating (1-5 stars).';
+            return;
+        }
+
+        const review = {
+            name: nameInput.value.trim(),
+            rating: selected,
+            comment: comment.value.trim(),
+            time: Date.now()
+        };
+
+        const key = getReviewsKey(section);
+        const reviews = loadReviews(key);
+        reviews.push(review);
+        saveReviews(key, reviews);
+        submitReviewToDatabase(review, key);
+
+        // reset
+        selected = 0;
+        form.reset();
+        [...starWrapper.querySelectorAll('.star')].forEach(s => s.classList.remove('filled'));
+
+        msg.textContent = 'Thanks! Your review was saved locally and is ready for backend sync.';
+        renderStats(section, reviews);
+        renderReviewList(section, reviews);
+    });
+
+    container.appendChild(form);
+}
+
+function initReviewSections() {
+    const sections = document.querySelectorAll('.rating-section');
+    sections.forEach(section => {
+        // change heading if present
+        const heading = section.querySelector('h3');
+        if (heading) heading.textContent = 'Rate our service';
+
+        const key = getReviewsKey(section);
+        const reviews = loadReviews(key);
+        renderStats(section, reviews);
+        renderReviewForm(section);
+        renderReviewList(section, reviews);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initReviewSections);

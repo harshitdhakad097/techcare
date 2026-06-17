@@ -7,7 +7,7 @@ A fully responsive, modern website for TechCare Solutions - a computer software 
 This is a complete, production-ready website featuring:
 - **Responsive Design**: Mobile-first approach that works on all devices
 - **Modern UI**: Blue/black tech theme with smooth animations
-- **Multiple Pages**: Home, Services, About, Pricing, Contact, and Blog
+- **Multiple Pages**: Home, Services, About, Contact, and Blog
 - **Interactive Features**: 
   - Dark mode toggle
   - Floating support buttons (Call, WhatsApp, Emergency)
@@ -24,10 +24,10 @@ This is a complete, production-ready website featuring:
 ```
 TechCare Solutions Website/
 │
-├── index.html           # Main homepage with hero, services, pricing, testimonials
+├── index.html           # Main homepage with hero, services, testimonials
 ├── about.html           # Company information, mission, vision, team
 ├── services.html        # Detailed service descriptions
-├── pricing.html         # (Integrated in index.html with #pricing section)
+
 ├── contact.html         # Contact information and booking form
 ├── blog.html            # Tech tips and guides
 ├── styles.css           # All styling, responsive design, themes
@@ -42,7 +42,7 @@ TechCare Solutions Website/
    - Quick stats (500+ customers, 10+ years, 1000+ issues fixed, 98% success)
    - Services preview grid (6 main services)
    - Why choose us section
-   - Pricing section with 3 tiers (Basic, Standard, Premium)
+   - Service review widget (5-star, with comments, per-page, stored locally in the browser)
    - FAQ section with 6 common questions
    - Testimonials carousel (3 customer reviews)
    - Tech tips blog preview
@@ -53,7 +53,7 @@ TechCare Solutions Website/
    - Detailed descriptions of all 6 main services
    - Additional services (Hardware assessment, Network setup, etc.)
    - Feature highlights and benefits
-   - Service pricing and call-to-action buttons
+   - Call-to-action buttons (contact us)
 
 ### 3. **About Page (about.html)**
    - Company mission and vision
@@ -156,8 +156,8 @@ Hours: Monday - Sunday, 9:00 AM - 10:00 PM
    ```
 
 ### 5. **Update Service Descriptions**
-   Edit service names, descriptions, and pricing in:
-   - `index.html` (services section and pricing)
+   Edit service names and descriptions in:
+   - `index.html` (services section)
    - `services.html` (detailed service pages)
 
 ### 6. **Add More Blog Articles**
